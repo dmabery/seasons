@@ -16,7 +16,8 @@ class App extends React.Component {
         );
     }
 
-    render() {
+    // helper function
+    renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
             return <SeasonDisplay lat={this.state.lat} /> 
         }
@@ -26,6 +27,16 @@ class App extends React.Component {
         }
 
         return <Spinner />
+
+    }
+
+    render() {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        )
+
     };
 };
 
